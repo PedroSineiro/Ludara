@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47168849bcfc874e92ef4a0db2e94b9, type: 3}
+  m_Name: Camuflagem Assassina
+  m_EditorClassIdentifier: 
+  habilityId: 3
+  habilityName: Camuflagem Assassina
+  discovered: 0
+  description: "Pode se tornar invis\xEDvel durante um turno, um persoangem invis\xEDvel
+    n\xE3o pode ser acertado por ataques convencionais. Al\xE9m disso enquanto estiver
+    invis\xEDvel seu dano aumenta em 3."

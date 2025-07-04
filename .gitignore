@@ -1,0 +1,25 @@
+﻿[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+sysinfo.txt
+
+# VS Code / Rider
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Crash reports
+*.dmp
+
+# Unity3D meta
+*.pidb.meta

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Beginning.unity
+    guid: b87ce4d95758b5d45b0f8f98670a1319
+  - enabled: 1
+    path: Assets/Scenes/Combat1.unity
+    guid: 8b4b13646b21c7f42a4a43f8af9e7036
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat1.unity
+    guid: cf2d020599664d747b330cdf8424cd98
+  - enabled: 1
+    path: Assets/Scenes/Combat2.unity
+    guid: a89644f392c297e4cac419382e776d0a
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat2.unity
+    guid: e950b39f49222524485a894ab52713ff
+  - enabled: 1
+    path: Assets/Scenes/Combat3.unity
+    guid: cec8089f8f97b224eaa69e961208f2df
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat3.unity
+    guid: aa6ec6a340327c848961a62232113a12
+  - enabled: 1
+    path: Assets/Scenes/Combat4.unity
+    guid: 8ba95b0e1f661894cab0efed5837dbb8
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat4.unity
+    guid: 3a772b2851876fd489a3d291d7a1bce6
+  - enabled: 1
+    path: Assets/Scenes/Combat5.unity
+    guid: 5ae9068232767014a968e02e64fe9bb0
+  - enabled: 1
+    path: Assets/Scenes/Combat6.unity
+    guid: c15b6161adfaf8a46ad06c41c65fd25b
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat5.unity
+    guid: 164349f00bfdbcf4db39f4321e5eb0a0
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 2a1e9e5047949f94296082adc303aace
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 61fe7861ff10a3845aadde53247f5971
+  - enabled: 1
+    path: Assets/Scenes/CombatFinal.unity
+    guid: 5a963bb05505fee41be649ace2bb2757
+  - enabled: 1
+    path: Assets/Scenes/AfterCombat6.unity
+    guid: 7712201401fe1b642b97d5ecab7a4298
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0

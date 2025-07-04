@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5c1099d24332045bceb610bb0df798, type: 3}
+  m_Name: Judith
+  m_EditorClassIdentifier: 
+  cardId: 4
+  cardName: Judith
+  obtained: 1
+  died: 0
+  initialHealth: 8
+  health: 8
+  currenthealth: 8
+  initialDamage: 3
+  damage: 3
+  movement: 3
+  range: 4
+  specialProperties: "Mec\xE2nico"
+  attackAudio: {fileID: 8300000, guid: 41145887d70ac604d88859c1090cdec3, type: 3}
+  isInvisible: 0
+  canGoInvisible: 0
+  supporterCharacter: {fileID: 0}
+  supportedCharacter: {fileID: 0}
+  isSupported: 0
+  isMechaCard: 0
+  mechaCard: {fileID: 0}
+  nonMechaCard: {fileID: 0}
+  isTransformed: 0
+  canTransform: 0
+  nonTransformedCard: {fileID: 0}
+  transformedCard: {fileID: 0}
+  transformAudio: {fileID: 0}
+  needRecharge: 0
+  numberOfTurns: 0
+  generateableItems:
+  - {fileID: 11400000, guid: 5901f8c98498fa745897e515a68225cc, type: 2}
+  - {fileID: 11400000, guid: a64e2f3b9b1e57840afe54d43e41396b, type: 2}
+  cardImage: {fileID: -2935878982533718834, guid: aa032e830936ec347a3bde99b656bf99, type: 3}
+  thumbnailImage: {fileID: -4246958952106348253, guid: 50d8b5a6a91ba3c4e87a3c19389d80b2, type: 3}

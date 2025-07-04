@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86f3d67186e7144c8ab4e2494c1ec79, type: 3}
+  m_Name: HolographicShield
+  m_EditorClassIdentifier: 
+  itemId: 2
+  itemName: "Escudo Hologr\xE1fico"
+  quantity: 0
+  discovered: 0
+  description: "Gera um escudo com 6 de vida que ir\xE1 receber qualquer dano recebido
+    naquele espa\xE7o."
+  cardImage: {fileID: 0}
+  thumbnailImage: {fileID: 0}
+  useAudio: {fileID: 8300000, guid: a0e59d2b934e68f4b9133f64690cddf2, type: 3}
+  attackAudio: {fileID: 0}

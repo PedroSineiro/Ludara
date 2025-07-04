@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb49263963899474f90706dce45d7ec1, type: 3}
+  m_Name: Amalgamate
+  m_EditorClassIdentifier: 
+  cardName: "Am\xE1lgamo"
+  health: 50
+  currenthealth: 50
+  damage: 6
+  movement: 3
+  range: 5
+  specialProperties: Golpe Duplo
+  attackAudio: {fileID: 8300000, guid: 86cd6ba5f7d18314ba8ad858230d00ea, type: 3}
+  deathAudio: {fileID: 0}
+  isInvisible: 0
+  canGoInvisible: 0
+  supporterCharacter: {fileID: 0}
+  supportedCharacter: {fileID: 0}
+  isSupported: 0
+  needRecharge: 0
+  cardImage: {fileID: -1054507903096180145, guid: 53e97f6e83810e44fa8f7a5745991857, type: 3}
+  thumbnailImage: {fileID: -6144010580324213015, guid: e755a3e02e3c0a94fa6be32726c9971b, type: 3}

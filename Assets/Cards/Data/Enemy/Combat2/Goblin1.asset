@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb49263963899474f90706dce45d7ec1, type: 3}
+  m_Name: Goblin1
+  m_EditorClassIdentifier: 
+  cardName: Goblin
+  health: 4
+  currenthealth: 4
+  damage: 2
+  movement: 4
+  range: 1
+  specialProperties: 
+  attackAudio: {fileID: 8300000, guid: ddf558cde75429643b2ff1cbb06d84f5, type: 3}
+  isInvisible: 0
+  canGoInvisible: 0
+  supporterCharacter: {fileID: 0}
+  supportedCharacter: {fileID: 0}
+  isSupported: 0
+  needRecharge: 0
+  cardImage: {fileID: 8771180692710378644, guid: eacdcefd97923cc4898c9bd23093c0d1, type: 3}
+  thumbnailImage: {fileID: -765919544376114568, guid: 311f361d4cfb27e449a7b0b1afee3352, type: 3}

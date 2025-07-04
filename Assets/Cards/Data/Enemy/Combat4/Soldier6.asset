@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb49263963899474f90706dce45d7ec1, type: 3}
+  m_Name: Soldier6
+  m_EditorClassIdentifier: 
+  cardName: Soldado
+  health: 6
+  currenthealth: 6
+  damage: 2
+  movement: 3
+  range: 1
+  specialProperties: Golpe Duplo
+  attackAudio: {fileID: 8300000, guid: ddf558cde75429643b2ff1cbb06d84f5, type: 3}
+  deathAudio: {fileID: 0}
+  isInvisible: 0
+  canGoInvisible: 0
+  supporterCharacter: {fileID: 0}
+  supportedCharacter: {fileID: 0}
+  isSupported: 0
+  needRecharge: 0
+  cardImage: {fileID: -2154110583681072313, guid: 7ddd6f772be84724eab4baa4ef06916b, type: 3}
+  thumbnailImage: {fileID: 5854621040677083734, guid: 139fff7e7aca9fb46a4ff0884d90c802, type: 3}
