@@ -19,6 +19,8 @@ public class Tile : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 
     public GameObject inspector;
 
+    public CombatManager combatManager;
+
     public void SetCard(CardData data)
     {
         ClearData();
@@ -46,10 +48,9 @@ public class Tile : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
             thumbnailHolder.sprite = data.thumbnailImage;
             occupied = true;
 
-            // Checa invisibilidade
             if (data.isInvisible)
             {
-                SetThumbnailAlpha(0f); // Invisibilidade total para inimigos
+                SetThumbnailAlpha(0f);
             }
             else
             {
@@ -73,7 +74,6 @@ public class Tile : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
         enemyCardData = null;
         itemCardData = null;
 
-        // Reset visual antes de esconder
         SetThumbnailAlpha(1f);
 
         thumbnailHolder.sprite = null;
@@ -103,6 +103,7 @@ public class Tile : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        combatManager.watchedTile = this;
         UpdateInspector();
     }
 
@@ -115,7 +116,7 @@ public class Tile : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
         combatManager.TryPlaceCharacter(this);
     }
 
-    void UpdateInspector()
+    public void UpdateInspector()
     {
         if (inspector == null) return;
 

@@ -1043,6 +1043,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7076396547630325622, guid: 7e07b1da0e0cef143ba038d468b16437, type: 3}
     - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 1880787539}
+    - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
       propertyPath: spawns.Array.size
       value: 6
       objectReference: {fileID: 0}

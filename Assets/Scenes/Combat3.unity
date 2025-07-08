@@ -1037,6 +1037,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1880787539}
     - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 1880787539}
+    - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
       propertyPath: startPosition.x
       value: -350
       objectReference: {fileID: 0}

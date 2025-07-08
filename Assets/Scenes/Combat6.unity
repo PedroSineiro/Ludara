@@ -1115,6 +1115,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7076396547630325622, guid: 1541755814b3cfb45b988c9fc0063647, type: 3}
     - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 1880787539}
+    - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
       propertyPath: spawns.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -1633,7 +1637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936584696255547015, guid: 0c2f7b302df079b428012649e5af3d0a, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6043146326987180059, guid: 0c2f7b302df079b428012649e5af3d0a, type: 3}
       propertyPath: m_IsActive

@@ -161,7 +161,7 @@ MonoBehaviour:
   - "Inicialmente voc\xEA ir\xE1 posicionar os seus personagens nos espa\xE7os mais
     esverdeados."
   - Quando terminar de posicionar todos os personagens, encerre.
-  - "A partida termina quando todas a cartas forem eliminadas, sendo as do inimgo
+  - "A partida termina quando todas a cartas forem eliminadas, sendo as do inimigo
     uma vit\xF3ria, e as suas uma derrota."
 --- !u!4 &78755568
 Transform:
@@ -1232,6 +1232,10 @@ PrefabInstance:
       propertyPath: tilePrefab
       value: 
       objectReference: {fileID: 7076396547630325622, guid: 6659ccdf8eb608843984ee03ec0dea42, type: 3}
+    - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 1880787539}
     - target: {fileID: 5787548660463797054, guid: 0a0c9fd892f8c264c85d0b42a44fed16, type: 3}
       propertyPath: spawns.Array.data[0].x
       value: 12

@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 1339739249}
+  saveManager: {fileID: 0}
 --- !u!114 &1007770686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - "No meio do sono, voc\xEA se v\xEA em uma froresta sombria."
+  - "No meio do sono, voc\xEA se v\xEA em uma floresta sombria."
   - "A sensa\xE7\xE3o \xE9 estranha, \xE9 como se aquilo n\xE3o fosse um sonho."
   - "As \xFAnicas coisas que voc\xEA tem s\xE3o as roupas no seu corpo."
   - "Por\xE9m, tem algo em um de seus bolsos."
@@ -1380,6 +1381,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fce2d5310c5bd4d4593369827a500976, type: 2}
   - {fileID: 11400000, guid: 5c493c05594c8a341aab6b7ae97682bf, type: 2}
   - {fileID: 11400000, guid: 4bfcf62fcfb807344ba165df8eefc090, type: 2}
+  eventMemory: {fileID: 0}
   sceneManaging: {fileID: 1143544277}
   sceneName: 
 --- !u!1001 &1154233480

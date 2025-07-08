@@ -105,10 +105,22 @@ public class CombatManager : MonoBehaviour
     private Dictionary<ItemCardData, Tile> itemTiles = new();
 
     private Dictionary<Tile, int> protectedTiles = new();
+    public Tile watchedTile = null;
+
+    private AudioClip cheatSound;
 
     void Start()
     {
         StartCombatPhase();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            AudioManager.Instance.PlaySFX(cheatSound);
+            EndCombat(winSceneName);
+        }
     }
 
     public void StartCombatPhase()
@@ -158,12 +170,14 @@ public class CombatManager : MonoBehaviour
                     nameText.text = "????";
                     option.selectable = false;
                 }
-                else if(!option.card.died)
+                else if (!option.card.died)
                 {
                     icon.color = Color.white;
                     nameText.text = option.card.name;
                     option.selectable = true;
-                } else {
+                }
+                else
+                {
                     icon.color = Color.red;
                     nameText.text = option.card.name;
                     option.selectable = false;
@@ -642,7 +656,8 @@ public class CombatManager : MonoBehaviour
         yield return StartCoroutine(PlayDamageAnimation(tile));
 
         CheckIfEnemyDied(enemy, tile);
-
+        if(watchedTile==tile)
+            tile.UpdateInspector();
         activeCharacter.usedAttacks++;
         ResetActionButtons(true);
         ClearTileHighlights();
@@ -1304,11 +1319,10 @@ public class CombatManager : MonoBehaviour
 
             while (attacksLeft > 0 && targets.Count > 0)
             {
-                // Prioriza personagens ainda não atacados
                 var target = targets.FirstOrDefault(t => !attackedThisTurn.Contains(t.card));
                 if (target.card == null)
                 {
-                    target = targets[0]; // Todos já foram atacados, repete algum
+                    target = targets[0];
                 }
 
                 attackedThisTurn.Add(target.card);
@@ -1333,6 +1347,8 @@ public class CombatManager : MonoBehaviour
                 
 
                 CheckIfCharacterDied(target.card, target.tile);
+                if (watchedTile == target.tile)
+                    target.tile.UpdateInspector();
                 attacksLeft--;
                 if (isCombatOver) yield break;
             }
@@ -1580,9 +1596,12 @@ public class CombatManager : MonoBehaviour
                             if (protectedTiles.TryGetValue(t, out int shieldHp))
                             {
                                 shieldHp -= 10;
-                                if(shieldHp > 0){
+                                if (shieldHp > 0)
+                                {
                                     protectedTiles[t] = shieldHp;
-                                } else {
+                                }
+                                else
+                                {
                                     protectedTiles.Remove(t);
                                     Image tileImage = t.GetComponent<Image>();
                                     tileImage.color = Color.white;
@@ -1590,10 +1609,12 @@ public class CombatManager : MonoBehaviour
                             }
                             else
                             {
-                                character.currenthealth -= character.specialProperties == "Defesa Robusta"?10-1:10;
+                                character.currenthealth -= character.specialProperties == "Defesa Robusta" ? 10 - 1 : 10;
                             }
                             StartCoroutine(PlayDamageAnimation(t));
                             CheckIfCharacterDied(character, t);
+                            if (watchedTile == t)
+                                t.UpdateInspector();
                         }
                         else if (enemyTiles.ContainsValue(t))
                         {
@@ -1601,9 +1622,12 @@ public class CombatManager : MonoBehaviour
                             if (protectedTiles.TryGetValue(t, out int shieldHp))
                             {
                                 shieldHp -= 10;
-                                if(shieldHp > 0){
+                                if (shieldHp > 0)
+                                {
                                     protectedTiles[t] = shieldHp;
-                                } else {
+                                }
+                                else
+                                {
                                     protectedTiles.Remove(t);
                                     Image tileImage = t.GetComponent<Image>();
                                     tileImage.color = Color.white;
@@ -1611,10 +1635,12 @@ public class CombatManager : MonoBehaviour
                             }
                             else
                             {
-                                enemy.currenthealth -= enemy.specialProperties == "Defesa Robusta"?10-1:10;
+                                enemy.currenthealth -= enemy.specialProperties == "Defesa Robusta" ? 10 - 1 : 10;
                             }
                             StartCoroutine(PlayDamageAnimation(t));
                             CheckIfEnemyDied(enemy, t);
+                            if (watchedTile == t)
+                                t.UpdateInspector();
                         }
                         else if (itemTiles.ContainsValue(t))
                         {
@@ -1622,9 +1648,12 @@ public class CombatManager : MonoBehaviour
                             if (protectedTiles.TryGetValue(t, out int shieldHp))
                             {
                                 shieldHp -= 10;
-                                if(shieldHp > 0){
+                                if (shieldHp > 0)
+                                {
                                     protectedTiles[t] = shieldHp;
-                                } else {
+                                }
+                                else
+                                {
                                     protectedTiles.Remove(t);
                                     Image tileImage = t.GetComponent<Image>();
                                     tileImage.color = Color.white;
@@ -1640,6 +1669,8 @@ public class CombatManager : MonoBehaviour
                                 t.ClearData();
                                 itemTiles.Remove(item);
                             }
+                            if (watchedTile == t)
+                                t.UpdateInspector();
                         }
                     }
                 }
@@ -1728,7 +1759,7 @@ public class CombatManager : MonoBehaviour
                     character.currenthealth = Mathf.Min(character.currenthealth + 7, character.health);
 
                     tile.GetComponent<Image>().color = Color.white;
-
+                    tile.UpdateInspector();
                     option.card.quantity--;
                     UpdateItemOptions();
                 });
@@ -1779,6 +1810,8 @@ public class CombatManager : MonoBehaviour
                             }
                         
                         StartCoroutine(PlayDamageAnimation(selectedTile));
+                        if (watchedTile == selectedTile)
+                            selectedTile.UpdateInspector();
 
                         tile.GetComponent<Image>().color = Color.white;
                         option.card.quantity--;
@@ -1822,7 +1855,7 @@ public class CombatManager : MonoBehaviour
                     character.currenthealth = Mathf.Min(character.currenthealth + 9, character.health);
 
                     tile.GetComponent<Image>().color = Color.white;
-
+                    tile.UpdateInspector();
                     option.card.quantity--;
                     UpdateItemOptions();
                 });
@@ -1969,9 +2002,12 @@ public class CombatManager : MonoBehaviour
                         if (protectedTiles.TryGetValue(t, out int shieldHp))
                         {
                             shieldHp -= 8;
-                            if(shieldHp > 0){
+                            if (shieldHp > 0)
+                            {
                                 protectedTiles[t] = shieldHp;
-                            } else {
+                            }
+                            else
+                            {
                                 protectedTiles.Remove(t);
                                 Image tileImage = t.GetComponent<Image>();
                                 tileImage.color = Color.white;
@@ -1979,10 +2015,12 @@ public class CombatManager : MonoBehaviour
                         }
                         else
                         {
-                            character.currenthealth -= character.specialProperties == "Defesa Robusta"?8-1:8;
+                            character.currenthealth -= character.specialProperties == "Defesa Robusta" ? 8 - 1 : 8;
                         }
                         StartCoroutine(PlayDamageAnimation(t));
                         CheckIfCharacterDied(character, t);
+                        if (watchedTile == t)
+                            t.UpdateInspector();
                     }
                     else if (enemyTiles.ContainsValue(t))
                     {
@@ -1990,9 +2028,12 @@ public class CombatManager : MonoBehaviour
                         if (protectedTiles.TryGetValue(t, out int shieldHp))
                         {
                             shieldHp -= 10;
-                            if(shieldHp > 0){
+                            if (shieldHp > 0)
+                            {
                                 protectedTiles[t] = shieldHp;
-                            } else {
+                            }
+                            else
+                            {
                                 protectedTiles.Remove(t);
                                 Image tileImage = t.GetComponent<Image>();
                                 tileImage.color = Color.white;
@@ -2000,10 +2041,12 @@ public class CombatManager : MonoBehaviour
                         }
                         else
                         {
-                            e.currenthealth -= e.specialProperties == "Defesa Robusta"?8-1:8;
+                            e.currenthealth -= e.specialProperties == "Defesa Robusta" ? 8 - 1 : 8;
                         }
                         StartCoroutine(PlayDamageAnimation(t));
                         CheckIfEnemyDied(e, t);
+                        if (watchedTile == t)
+                            t.UpdateInspector();
                     }
                     else if (itemTiles.ContainsValue(t))
                     {
@@ -2011,9 +2054,12 @@ public class CombatManager : MonoBehaviour
                         if (protectedTiles.TryGetValue(t, out int shieldHp))
                         {
                             shieldHp -= 10;
-                            if(shieldHp > 0){
+                            if (shieldHp > 0)
+                            {
                                 protectedTiles[t] = shieldHp;
-                            } else {
+                            }
+                            else
+                            {
                                 protectedTiles.Remove(t);
                                 Image tileImage = t.GetComponent<Image>();
                                 tileImage.color = Color.white;
@@ -2029,6 +2075,8 @@ public class CombatManager : MonoBehaviour
                             t.ClearData();
                             itemTiles.Remove(item);
                         }
+                        if (watchedTile == t)
+                            t.UpdateInspector();
                     }
                 }
             }

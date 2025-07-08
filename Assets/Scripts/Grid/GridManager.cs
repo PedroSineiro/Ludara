@@ -14,6 +14,8 @@ public class GridManager : MonoBehaviour
 
     public GameObject inspector;
 
+    public CombatManager combatManager;
+
     void Awake()
     {
         GenerateGrid();
@@ -37,6 +39,7 @@ public class GridManager : MonoBehaviour
 
                 Tile tileScript = tile.GetComponent<Tile>();
                 tileScript.inspector = inspector;
+                tileScript.combatManager = combatManager;
 
                 Vector2Int pos = new Vector2Int(x, y);
                 if (tileScript != null)
